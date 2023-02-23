@@ -1,0 +1,165 @@
+
+<% if(isLoggedin) { %>
+    <%- include('../partials/userloggedinHeader') %>
+    <% }else { %>
+    <%- include('../partials/userHeader') %>
+    <% } %>
+    
+
+    <div class="nk-main">
+        
+            <!-- START: Breadcrumbs -->
+<div class="nk-gap-1"></div>
+<div class="container">
+    <ul class="nk-breadcrumbs">
+        
+        
+        <li><a href="index.html">Home</a></li>
+        
+        
+        <li><span class="fa fa-angle-right"></span></li>
+        
+        <li><a href="store.html">Menu</a></li>
+        
+        
+        <li><span class="fa fa-angle-right"></span></li>
+        
+        <li><span>Wishlist</span></li>
+        
+    </ul>
+</div>
+<div class="nk-gap-1"></div>
+<!-- END: Breadcrumbs -->
+
+        
+
+        
+<div class="container">
+    <div class="nk-store nk-store-cart">
+        <div class="table-responsive">
+
+            <!-- START: Products in Cart -->
+            <table class="table nk-store-cart-products">
+                <tbody>
+                    <% if(id) { %>
+                    <% if((wishlistProducts.item).length == 0) { %>
+                        <h4>No items found in wishlist. <br> Add item to Wishlist !!! </h4>
+                    <% } %>
+                    <% for(let key of wishlistProducts.item){ %>
+                        <tr>
+
+                            <td class="nk-product-cart-thumb">
+                                <a href="/view-product?id=<%= key.productId._id %>" class="nk-image-box-1 nk-post-image">
+                                    <img src="./assets/uploads/<%= key.productId.image[0] %>" alt="However, I have reason" width="115">
+                                </a>
+                            </td>
+                            <td class="nk-product-cart-title">
+                                <h5 class="h6">Product:</h5>
+                                <div class="nk-gap-1"></div>
+
+                                <h2 class="nk-post-title h4">
+                                    <a href="/view-product?id=<%= key.productId._id %>"><%= key.productId.name %></a>
+                                </h2>
+                            </td>
+                            <td class="nk-product-cart-price">
+                                <h5 class="h6">Genre:</h5>
+                                <div class="nk-gap-1"></div>
+
+                                <strong><%= key.productId.genre %></strong>
+                            </td>
+
+                            <td class="nk-product-cart-price">
+                                <h5 class="h6">Price:</h5>
+                                <div class="nk-gap-1"></div>
+                                <strong>₹ <%= key.productId.price %></strong>
+                            </td>
+                            <td>
+                                <div class="nk-gap-1"></div>
+                                <a href="/add-to-cart-delete-wishlist?id=<%= key.productId._id %>" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Add to Cart</a>
+                            </td>
+                            
+                            <td class="nk-product-cart-remove"><a href="/delete-wishlist?id=<%= key.productId._id %>"><span class="ion-android-close"></span></a></td>
+                        
+                        </tr>
+                        <% } %>
+                        <% }else{ %>
+                            <h4>Not Signed in. <br> Sign in now!!! </h4>
+                            <a href="/login" class="btn btn-danger ml-2">login</a>
+
+                            <% } %>
+                </tbody>
+            </table>
+            <!-- END: Products in Cart -->
+
+        </div>
+        <div class="nk-gap-1"></div>
+        <div class="clearfix"></div>
+        <div class="nk-gap-2"></div>
+
+    </div>
+</div>
+
+<div class="nk-gap-2"></div>
+
+
+        
+            <!-- START: Footer -->
+<footer class="nk-footer">
+
+    <div class="container">
+        <div class="nk-gap-3"></div>
+        <div class="row vertical-gap">
+            <div class="col-md-6">
+                <div class="nk-widget">
+                    <h4 class="nk-widget-title"><span class="text-main-1">Contact</span> With Us</h4>
+                    <div class="nk-widget-content">
+                        <form action="php/ajax-contact-form.php" class="nk-form nk-form-ajax">
+                            <div class="row vertical-gap sm-gap">
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control required" name="email" placeholder="Email *">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control required" name="name" placeholder="Name *">
+                                </div>
+                            </div>
+                            <div class="nk-gap"></div>
+                            <textarea class="form-control required" name="message" rows="5" placeholder="Message *"></textarea>
+                            <div class="nk-gap-1"></div>
+                            <button class="nk-btn nk-btn-rounded nk-btn-color-white">
+                                <span>Send</span>
+                                <span class="icon"><i class="ion-paper-airplane"></i></span>
+                            </button>
+                            <div class="nk-form-response-success"></div>
+                            <div class="nk-form-response-error"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="nk-gap-3"></div>
+    </div>
+
+    <div class="nk-copyright">
+        <div class="container">
+            <div class="nk-copyright-right">
+                <ul class="nk-social-links-2">
+                    <li><a class="nk-social-₹s" href="#"><span class="fa fa-₹s"></span></a></li>
+                    <li><a class="nk-social-twitch" href="#"><span class="fab fa-twitch"></span></a></li>
+                    <li><a class="nk-social-steam" href="#"><span class="fab fa-steam"></span></a></li>
+                    <li><a class="nk-social-facebook" href="#"><span class="fab fa-facebook"></span></a></li>
+                    <li><a class="nk-social-google-plus" href="#"><span class="fab fa-google-plus"></span></a></li>
+                    <li><a class="nk-social-twitter" href="#" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                    <li><a class="nk-social-pinterest" href="#"><span class="fab fa-pinterest-p"></span></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END: Footer -->
+
+        
+    </div>
+
+    <%- include('../partials/userFooter') %>

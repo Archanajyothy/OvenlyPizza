@@ -1,0 +1,79 @@
+<%- include("../partials/userDashboardHeader") -%>
+    <%- include("../partials/userSidebar") -%>
+        <div class="page-wrapper">
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        
+                        <h4 class="page-title">User Dashboard</h4>
+                        
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-12 col-xlg-3 col-md-5">
+                        <div class="card">
+                            <div class="card-body text-dark" >
+                                <center class="m-t-30"><div>
+                                    <img src="https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg" class="rounded-circle"
+                                    width="150" />
+                                </div> 
+                                    <div class="d-block">
+                                        <h4 class="card-title m-t-10"><%= user.name %>
+                                        <a href="/edit-user?id=<%= user._id %>" class="btn btn-primary ms-2 ">Edit</a>
+                                        </h4>
+                                    </div>
+                                    <h6 class="card-subtitle">User</h6>
+                                </center>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div class="card-body"> <small class="text-muted">Email address </small>
+                                <h6><%= user.email %></h6> <small class="text-muted p-t-30 db">Phone</small>
+                                <h6><%= user.mobile %></h6> <small class="text-muted p-t-30 db">Address</small>
+                                <h6><%= user.address %></h6>
+                                <br/>
+                            <small class="text-muted p-t-30 db">Social Profile</small>
+                                <br />
+                                <button class="btn btn-circle btn-secondary"><i class="fab fa-facebook-f"></i></button>
+                                <button class="btn btn-circle btn-secondary"><i class="fab fa-twitter"></i></button>
+                                <button class="btn btn-circle btn-secondary"><i class="fab fa-youtube"></i></button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    
+                </div>
+                <!-- Row -->
+                <!-- End PAge Content -->
+            </div>
+            <!-- footer -->
+            <footer class="footer text-center">
+                All Rights Reserved. 
+            </footer>
+            <!-- End footer -->
+        </div>
+        </div>
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="dist/js/app-style-switcher.js"></script>
+        <!--Wave Effects -->
+        <script src="dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="dist/js/custom.js"></script>
+        </body>
+
+        </html>

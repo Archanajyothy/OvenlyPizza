@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+    
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Ovenly p!zZA</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+
+    <meta name="description" content="Pizza - Bootstrap template for communities and pizza store">
+    <meta name="keywords" content="pizza, template, HTML template, responsive, Bootstrap, premium">
+    <meta name="author" content="_nK">
+
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- FontAwesome -->
+    <script defer src="assets/vendor/fontawesome-free/js/all.js"></script>
+    <script defer src="assets/vendor/fontawesome-free/js/v4-shims.js"></script>
+
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="assets/vendor/ionicons/css/ionicons.min.css">
+
+    <!-- Flickity -->
+    <link rel="stylesheet" href="assets/vendor/flickity/dist/flickity.min.css">
+
+    <!-- Photoswipe -->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/photoswipe/dist/photoswipe.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/photoswipe/dist/default-skin/default-skin.css">
+
+    <!-- Seiyria Bootstrap Slider -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-slider/dist/css/bootstrap-slider.min.css">
+
+    <!-- Summernote -->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/summernote/dist/summernote-bs4.css">
+
+    <!-- GoodGames -->
+    <link rel="stylesheet" href="assets/css/goodgames.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    
+    <!-- Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        function updateButtonText(event) {
+          var button = document.getElementById("dropdownMenuButton");
+          button.innerHTML = event.target.innerHTML;
+          localStorage.setItem("selectedItem", event.target.innerHTML);
+        }
+        
+        window.onload = function() {
+          var selectedItem = localStorage.getItem("selectedItem");
+          if (selectedItem) {
+            var button = document.getElementById("dropdownMenuButton");
+            button.innerHTML = selectedItem;
+            localStorage.removeItem("selectedItem");
+          }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="loader-wrapper" style="z-index: 100;">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+  
+      <script>
+          $(window).on("load",function(){
+            $(".loader-wrapper").fadeOut("slow");
+          });
+      </script>
+  
+    <!--
+        Additional Classes:
+            .nk-header-opaque
+    -->
+    <header class="nk-header nk-header-opaque">
+    
+    
+    <!-- START: Top Contacts -->
+    <div class="nk-contacts-top" style="z-index: 0;">
+        <div class="container">
+            <div class="nk-contacts-left">
+                <ul class="nk-social-links">
+                    <li><a class="nk-social-rss" href="#"><span class="fa fa-rss"></span></a></li>
+                    <li><a class="nk-social-twitch" href="#"><span class="fab fa-twitch"></span></a></li>
+                    <li><a class="nk-social-steam" href="#"><span class="fab fa-steam"></span></a></li>
+                    <li><a class="nk-social-facebook" href="#"><span class="fab fa-facebook"></span></a></li>
+                    <li><a class="nk-social-google-plus" href="#"><span class="fab fa-google-plus"></span></a></li>
+                    <li><a class="nk-social-twitter" href="#" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                    <li><a class="nk-social-pinterest" href="#"><span class="fab fa-pinterest-p"></span></a></li>
+    
+                </ul>
+            </div>
+            <div class="nk-contacts-right">
+                <ul class="nk-contacts-icons">
+                    
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#modalSearch">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/login">
+                            <span class="fa fa-user"></span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <!-- <span class="nk-cart-toggle">
+                            <span class="fa fa-shopping-cart"></span>
+                            <span class="nk-badge">0</span>
+                        </span> -->
+                        
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END: Top Contacts -->
+
+        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide" style="z-index: 0;">
+            <div class="container">
+                <div class="nk-nav-table">
+                    
+                    <a href="index.html" class="nk-nav-logo">
+                        <img src="assets/images/favicon.png" alt="" width="120">
+
+                    </a>
+                    
+                    <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
+                        <li class="">
+                            <a href="/">
+                                Home
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/catalog">
+                                Menu
+                                
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/wishlist">
+                                Wishlist
+                                
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/cart">
+                                Cart
+                                
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/checkout">
+                                Checkout
+                            </a>
+                        </li>
+            
+                    </ul>
+                    <ul class="nk-nav nk-nav-right nk-nav-icons">
+                        
+                            <li class="single-icon d-lg-none">
+                                <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                                    <span class="nk-icon-burger">
+                                        <span class="nk-t-1"></span>
+                                        <span class="nk-t-2"></span>
+                                        <span class="nk-t-3"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END: Navbar -->
+    
+    </header>
+    
+    <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="index.html" class="nk-nav-logo">
+                    <img src="assets/images/favicon.png" alt="" width="120">
+                </a>
+                <div class="nk-navbar-mobile-content">
+                    <ul class="nk-nav">
+                        <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: Navbar Mobile -->
+    
